@@ -1,9 +1,42 @@
 ---
 # Purpose: Default variables for role
-# Last Updated: 2018.07.01
+# Last Updated: 2019.04.12
 # Notes:
 
 
 path_to_ssh_pub_key: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
 
 docker_version: "5:18.09.2~3-0~ubuntu-bionic"
+
+modules:
+ - br_netfilter
+ - ip6_udp_tunnel
+ - ip_set
+ - ip_set_hash_ip
+ - ip_set_hash_net
+ - iptable_filter
+ - iptable_nat
+ - iptable_mangle
+ - iptable_raw
+ - nf_conntrack_netlink
+ - nf_conntrack
+ - nf_conntrack_ipv4
+ - nf_defrag_ipv4
+ - nf_nat
+ - nf_nat_ipv4
+ - nf_nat_masquerade_ipv4
+ - nfnetlink
+ - udp_tunnel
+ - veth
+ - vxlan
+ - x_tables
+ - xt_addrtype
+ - xt_conntrack
+ - xt_comment
+ - xt_mark
+ - xt_multiport
+ - xt_nat
+ - xt_recent
+ - xt_set
+ - xt_statistic
+ - xt_tcpudp

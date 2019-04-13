@@ -1,15 +1,7 @@
 ---
 # Purpose: Check docker version and install docker if not found
-# Last Updated: 2018.08.21
+# Last Updated: 2019.04.12
 # Notes: There was an issue with Ansible not accepting the results var in the second block, so I reregistered the var (Ansible 2.5.4)
-
-
-- command: docker version
-  register: result
-  failed_when: false
-  changed_when: false
-
-- block:
 
   - name: Add docker gpg key
     apt_key:
@@ -41,19 +33,4 @@
       groups: docker
       state: present
 
-  when: result.rc == 2
-  become: true
 
-- command: docker version
-  register: result
-  failed_when: false
-  changed_when: false
-
-- block:
-
-  - debug: msg="Not a supported rke Docker version!"
-
-  when:
-    - "\"1.12.6\" not in result.stdout"
-    - "\"1.13.1\" not in result.stdout"
-    - "\"17.03.2\" not in result.stdout"

@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  author: drewgwallace
+  author: brankomijuskovic
   description: Prepare server for Rancher Kubernetes Engine (rke).
   galaxy_tags:
     - system
@@ -12,7 +12,7 @@ galaxy_info:
     - rancher
     - containers
   license: MIT
-  min_ansible_version: 2.4
+  min_ansible_version: 2.5
   platforms:
     - name: Debian
       versions:
