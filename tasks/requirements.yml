@@ -1,7 +1,7 @@
 ---
 - name: Add modules at boot
   lineinfile: path=/etc/modules-load.d/modules.conf regexp=^{{ line }} line={{ line }}
-  with_lines: modules
+  with_lines: {{ modules }}
 
 - name: Add sysconfig
   lineinfile: path=/etc/sysctl.conf regexp='^net.bridge.bridge-nf-call-iptables' line='net.bridge.bridge-nf-call-iptables=1'
