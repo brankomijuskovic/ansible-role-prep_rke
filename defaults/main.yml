@@ -6,4 +6,4 @@
 
 path_to_ssh_pub_key: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
 
-docker_version: "18.09.2"
+docker_version: "18.09.2~3-0~ubuntu-bionic"
