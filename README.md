@@ -10,12 +10,11 @@
 ## Execution
 <pre>
     - hosts: all
+      user: root
       tasks:
       - include_role:
-          name: drewgwallace.prep_rke
-        vars:
-          path_to_ssh_pub_key: "/home/<b>USER</b>/.ssh/id_rsa.pub"
-          docker_version: "17.03.2~ce~3-0~ubuntu"
+          name: ansible-role-prep_rke
+
 </pre>
 
 ----
