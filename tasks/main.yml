@@ -5,6 +5,10 @@
 
 - include: add_authorized_key.yml
 
-- include: docker_install.yml
+- include: docker_install_ubuntu.yml
+  when: ansible_os_family == 'Debian'
+
+- include: docker_install_centos.yml
+  when: ansible_os_family == 'RedHat'
 
 - include: requirements.yml

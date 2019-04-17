@@ -18,13 +18,13 @@
       name: "docker-ce"
       update_cache: yes
       state: latest
-    when: "'latest' in docker_version|lower"
+    when: "'latest' in docker_ubuntu_version|lower"
 
   - name: Update repositories cache and install docker-ce package at specified version
     apt:
-      name: "docker-ce={{ docker_version }}"
+      name: "docker-ce={{ docker_ubuntu_version }}"
       update_cache: yes
-    when: "'latest' not in docker_version|lower"
+    when: "'latest' not in docker_ubuntu_version|lower"
 
   - name: Add remote user to docker group
     user:
