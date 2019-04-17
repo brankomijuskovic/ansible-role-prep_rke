@@ -1,6 +1,6 @@
 ---
 - name: Add modules at boot
-  lineinfile: path=/etc/modules-load.d/modules.conf regexp=^{{ item }} line={{ item }}
+  lineinfile: path=/etc/modules-load.d/modules.conf regexp=^{{ item }} line={{ item }} create=yes
   with_items: "{{ modules }}"
 
 - name: Add sysconfig
