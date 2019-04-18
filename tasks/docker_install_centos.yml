@@ -42,3 +42,15 @@
   package: 
     name: firewalld
     state: absent
+
+## RHEL bug workaround https://bugzilla.redhat.com/show_bug.cgi?id=1527565 
+- name: Create rke user
+  user:
+    name: rke 
+    shell: /bin/bash
+    groups: docker
+
+- name: Add ssh key to the rke user
+  authorized_key:
+    user: rke
+    key: "{{ lookup('file', path_to_ssh_pub_key) }}"
