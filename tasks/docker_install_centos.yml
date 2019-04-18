@@ -37,3 +37,8 @@
     append: yes
     groups: docker
     state: present
+
+- name: Remove firewalld
+  package: 
+    name: firewalld
+    state: absent
