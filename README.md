@@ -20,4 +20,4 @@
 ----
 
 ## Notes
-+ Debian based servers with Apt type package management ONLY
++ Debian and RHEL based servers supported
